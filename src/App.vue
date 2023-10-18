@@ -1,23 +1,15 @@
 <template>
-  <div class="box">
-    <h1>我是App</h1>
-    <p>{{ str }}</p>
-    <hr>
-    <h1>新增一个大标题</h1>
+  <div>
+    <h1>APP根组件</h1>
   </div>
 </template>
 
 <script setup lang="ts">
-const str = '我爱你祖国'
+import { onMounted } from 'vue'
+import { reqLogin } from './api/user'
+onMounted(() => {
+  reqLogin({ username: 'admin', password: '111111' })
+})
 </script>
 
-<style scoped lang="scss">
-.box {
-  width: 600px;
-  height: 400px;
-  background-color: black;
-  h1 {
-    color: white;
-  }
-}
-</style>
+<style scoped></style>
